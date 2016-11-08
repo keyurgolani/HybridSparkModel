@@ -42,22 +42,22 @@ public class Launch {
 		VectorizationProperties.loadProperties();
 	}
 	
-	public static List<LabeledPoint> FPs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> TPs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> FNs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> TNs = new ArrayList<LabeledPoint>();
+	public static List<LabeledPoint> FPs;
+	public static List<LabeledPoint> TPs;
+	public static List<LabeledPoint> FNs;
+	public static List<LabeledPoint> TNs;
 	
-	public static List<LabeledPoint> ambiguousTPs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> confidentTPs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> ambiguousTNs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> confidentTNs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> ambiguousFPs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> confidentFPs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> ambiguousFNs = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> confidentFNs = new ArrayList<LabeledPoint>();
+	public static List<LabeledPoint> ambiguousTPs;
+	public static List<LabeledPoint> confidentTPs;
+	public static List<LabeledPoint> ambiguousTNs;
+	public static List<LabeledPoint> confidentTNs;
+	public static List<LabeledPoint> ambiguousFPs;
+	public static List<LabeledPoint> confidentFPs;
+	public static List<LabeledPoint> ambiguousFNs;
+	public static List<LabeledPoint> confidentFNs;
 	
-	public static List<LabeledPoint> maliciousSamples = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> benignSamples = new ArrayList<LabeledPoint>();
+	public static List<LabeledPoint> maliciousSamples;
+	public static List<LabeledPoint> benignSamples;
 	
 	public static NaiveBayesModel modelNB = null;
 	public static RandomForestModel modelRF = null;
@@ -66,8 +66,8 @@ public class Launch {
 	public static DecisionTreeModel modelDT = null;
 	public static SVMModel modelSVM = null;
 	
-	public static List<LabeledPoint> ambiguousSamples = new ArrayList<LabeledPoint>();
-	public static List<LabeledPoint> confidentSamples = new ArrayList<LabeledPoint>();
+	public static List<LabeledPoint> ambiguousSamples;
+	public static List<LabeledPoint> confidentSamples;
 	
 	public static SparkConf sparkConf = new SparkConf().setAppName(ProjectProperties.sparkAppName).setMaster("local");
 	public static JavaSparkContext jsc = new JavaSparkContext(sparkConf);
@@ -219,6 +219,26 @@ public class Launch {
 		
 		List<LabeledPoint> filteredTestingList = filteredTestingData.collect();
 		List<LabeledPoint> testingList = testData.collect();
+		
+		maliciousSamples = new ArrayList<LabeledPoint>();
+		benignSamples = new ArrayList<LabeledPoint>();
+		
+		FPs = new ArrayList<LabeledPoint>();         
+		TPs = new ArrayList<LabeledPoint>();         
+		FNs = new ArrayList<LabeledPoint>();         
+		TNs = new ArrayList<LabeledPoint>();         
+		                                             
+		ambiguousTPs = new ArrayList<LabeledPoint>();
+		confidentTPs = new ArrayList<LabeledPoint>();
+		ambiguousTNs = new ArrayList<LabeledPoint>();
+		confidentTNs = new ArrayList<LabeledPoint>();
+		ambiguousFPs = new ArrayList<LabeledPoint>();
+		confidentFPs = new ArrayList<LabeledPoint>();
+		ambiguousFNs = new ArrayList<LabeledPoint>();
+		confidentFNs = new ArrayList<LabeledPoint>();
+		
+		ambiguousSamples = new ArrayList<LabeledPoint>();
+		confidentSamples = new ArrayList<LabeledPoint>();
 		
 		for (int i = 0; i < filteredTestingList.size(); i++) {
 			LabeledPoint currentPoint = testingList.get(i);
