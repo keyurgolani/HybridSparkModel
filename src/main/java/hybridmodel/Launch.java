@@ -280,15 +280,6 @@ public class Launch {
 					FPs.add(currentPoint);
 					benignSamples.add(currentPoint);
 					if(score >= 0.8) {
-						if(currentFilteredPoint.label() == 1) {
-							dosFPs.add(currentPoint);
-						} else if(currentFilteredPoint.label() == 2) {
-							u2rFPs.add(currentPoint);
-						} else if(currentFilteredPoint.label() == 3) {
-							r2lFPs.add(currentPoint);
-						} else if(currentFilteredPoint.label() == 4) {
-							probingFPs.add(currentPoint);
-						}
 						confidentFPs.add(currentPoint);
 					} else {
 						ambiguousFPs.add(currentPoint);
@@ -297,6 +288,15 @@ public class Launch {
 					FNs.add(currentPoint);
 					maliciousSamples.add(currentPoint);
 					if(score >= 0.8) {
+						if(currentFilteredPoint.label() == 1) {
+							dosFNs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 2) {
+							u2rFNs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 3) {
+							r2lFNs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 4) {
+							probingFNs.add(currentPoint);
+						}
 						confidentFNs.add(currentPoint);
 					} else {
 						ambiguousFNs.add(currentPoint);
