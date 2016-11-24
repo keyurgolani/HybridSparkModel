@@ -136,55 +136,6 @@ public class Launch {
 		log("------------------------------------------------ Confident Data Processing ---------------------------------------");
 		analyseData(confidentData, filterString);
 		
-		log("------------------------------------------------ Categorical Accuracy --------------------------------------------");
-		log("------------------------- DOS Accuracy ------------------------");
-		log("TPR:\t\t\t\t" + ((double)dosTPs.size() / (double)(dosTPs.size() + dosFNs.size())));
-		log("TNR:\t\t\t\t" + ((double)dosTNs.size() / (double)(dosTNs.size() + dosFPs.size())));
-		log("PPV:\t\t\t\t" + ((double)dosTPs.size() / (double)(dosTPs.size() + dosFPs.size())));
-		log("NPV:\t\t\t\t" + ((double)dosTNs.size() / (double)(dosTNs.size() + dosFNs.size())));
-		log("FPR:\t\t\t\t" + ((double)dosFPs.size() / (double)(dosFPs.size() + dosTNs.size())));
-		log("FNR:\t\t\t\t" + ((double)dosFNs.size() / (double)(dosFNs.size() + dosTPs.size())));
-		log("FDR:\t\t\t\t" + ((double)dosFPs.size() / (double)(dosFPs.size() + dosTPs.size())));
-		log("ACC:\t\t\t\t" + ((double)(dosTPs.size() + dosTNs.size()) / (double)(dosTPs.size() + dosTNs.size() + dosFPs.size() + dosFNs.size())));
-		log("F1:\t\t\t\t" + ((double)(2 * dosTPs.size()) / (double)(2 * dosTPs.size() + dosFPs.size() + dosFNs.size())));
-		
-		
-		log("------------------------- R2L Accuracy ------------------------");
-		log("TPR:\t\t\t\t" + ((double)r2lTPs.size() / (double)(r2lTPs.size() + r2lFNs.size())));
-		log("TNR:\t\t\t\t" + ((double)r2lTNs.size() / (double)(r2lTNs.size() + r2lFPs.size())));
-		log("PPV:\t\t\t\t" + ((double)r2lTPs.size() / (double)(r2lTPs.size() + r2lFPs.size())));
-		log("NPV:\t\t\t\t" + ((double)r2lTNs.size() / (double)(r2lTNs.size() + r2lFNs.size())));
-		log("FPR:\t\t\t\t" + ((double)r2lFPs.size() / (double)(r2lFPs.size() + r2lTNs.size())));
-		log("FNR:\t\t\t\t" + ((double)r2lFNs.size() / (double)(r2lFNs.size() + r2lTPs.size())));
-		log("FDR:\t\t\t\t" + ((double)r2lFPs.size() / (double)(r2lFPs.size() + r2lTPs.size())));
-		log("ACC:\t\t\t\t" + ((double)(r2lTPs.size() + r2lTNs.size()) / (double)(r2lTPs.size() + r2lTNs.size() + r2lFPs.size() + r2lFNs.size())));
-		log("F1:\t\t\t\t" + ((double)(2 * r2lTPs.size()) / (double)(2 * r2lTPs.size() + r2lFPs.size() + r2lFNs.size())));
-		
-		
-		log("------------------------- U2R Accuracy ------------------------");
-		log("TPR:\t\t\t\t" + ((double)u2rTPs.size() / (double)(u2rTPs.size() + u2rFNs.size())));
-		log("TNR:\t\t\t\t" + ((double)u2rTNs.size() / (double)(u2rTNs.size() + u2rFPs.size())));
-		log("PPV:\t\t\t\t" + ((double)u2rTPs.size() / (double)(u2rTPs.size() + u2rFPs.size())));
-		log("NPV:\t\t\t\t" + ((double)u2rTNs.size() / (double)(u2rTNs.size() + u2rFNs.size())));
-		log("FPR:\t\t\t\t" + ((double)u2rFPs.size() / (double)(u2rFPs.size() + u2rTNs.size())));
-		log("FNR:\t\t\t\t" + ((double)u2rFNs.size() / (double)(u2rFNs.size() + u2rTPs.size())));
-		log("FDR:\t\t\t\t" + ((double)u2rFPs.size() / (double)(u2rFPs.size() + u2rTPs.size())));
-		log("ACC:\t\t\t\t" + ((double)(u2rTPs.size() + u2rTNs.size()) / (double)(u2rTPs.size() + u2rTNs.size() + u2rFPs.size() + u2rFNs.size())));
-		log("F1:\t\t\t\t" + ((double)(2 * u2rTPs.size()) / (double)(2 * u2rTPs.size() + u2rFPs.size() + u2rFNs.size())));
-		
-		
-		log("------------------------- Probing Accuracy ------------------------");
-		log("TPR:\t\t\t\t" + ((double)probingTPs.size() / (double)(probingTPs.size() + probingFNs.size())));
-		log("TNR:\t\t\t\t" + ((double)probingTNs.size() / (double)(probingTNs.size() + probingFPs.size())));
-		log("PPV:\t\t\t\t" + ((double)probingTPs.size() / (double)(probingTPs.size() + probingFPs.size())));
-		log("NPV:\t\t\t\t" + ((double)probingTNs.size() / (double)(probingTNs.size() + probingFNs.size())));
-		log("FPR:\t\t\t\t" + ((double)probingFPs.size() / (double)(probingFPs.size() + probingTNs.size())));
-		log("FNR:\t\t\t\t" + ((double)probingFNs.size() / (double)(probingFNs.size() + probingTPs.size())));
-		log("FDR:\t\t\t\t" + ((double)probingFPs.size() / (double)(probingFPs.size() + probingTPs.size())));
-		log("ACC:\t\t\t\t" + ((double)(probingTPs.size() + probingTNs.size()) / (double)(probingTPs.size() + probingTNs.size() + probingFPs.size() + probingFNs.size())));
-		log("F1:\t\t\t\t" + ((double)(2 * probingTPs.size()) / (double)(2 * probingTPs.size() + probingFPs.size() + probingFNs.size())));
-		
-		
 		jsc.stop();
 	}
 	
@@ -300,32 +251,23 @@ public class Launch {
 			if (prediction == currentFilteredPoint.label()) {
 				if (prediction > 0) {
 					TPs.add(currentPoint);
-					if(currentFilteredPoint.label() == 1) {
-						dosTPs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 2) {
-						u2rTPs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 3) {
-						r2lTPs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 4) {
-						probingTPs.add(currentPoint);
-					}
 					maliciousSamples.add(currentPoint);
 					if(score >= 0.8) {
+						if(currentFilteredPoint.label() == 1) {
+							dosTPs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 2) {
+							u2rTPs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 3) {
+							r2lTPs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 4) {
+							probingTPs.add(currentPoint);
+						}
 						confidentTPs.add(currentPoint);
 					} else {
 						ambiguousTPs.add(currentPoint);
 					}
 				} else {
 					TNs.add(currentPoint);
-					if(currentFilteredPoint.label() == 1) {
-						dosTNs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 2) {
-						u2rTNs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 3) {
-						r2lTNs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 4) {
-						probingTNs.add(currentPoint);
-					}
 					benignSamples.add(currentPoint);
 					if(score >= 0.8) {
 						confidentTNs.add(currentPoint);
@@ -336,32 +278,23 @@ public class Launch {
 			} else {
 				if (prediction > 0) {
 					FPs.add(currentPoint);
-					if(currentFilteredPoint.label() == 1) {
-						dosFPs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 2) {
-						u2rFPs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 3) {
-						r2lFPs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 4) {
-						probingFPs.add(currentPoint);
-					}
 					benignSamples.add(currentPoint);
 					if(score >= 0.8) {
+						if(currentFilteredPoint.label() == 1) {
+							dosFPs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 2) {
+							u2rFPs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 3) {
+							r2lFPs.add(currentPoint);
+						} else if(currentFilteredPoint.label() == 4) {
+							probingFPs.add(currentPoint);
+						}
 						confidentFPs.add(currentPoint);
 					} else {
 						ambiguousFPs.add(currentPoint);
 					}
 				} else {
 					FNs.add(currentPoint);
-					if(currentFilteredPoint.label() == 1) {
-						dosFNs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 2) {
-						u2rFNs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 3) {
-						r2lFNs.add(currentPoint);
-					} else if(currentFilteredPoint.label() == 4) {
-						probingFNs.add(currentPoint);
-					}
 					maliciousSamples.add(currentPoint);
 					if(score >= 0.8) {
 						confidentFNs.add(currentPoint);
@@ -430,6 +363,59 @@ public class Launch {
 		confidentSamples.addAll(confidentFPs);
 		confidentSamples.addAll(confidentTNs);
 		confidentSamples.addAll(confidentTPs);
+		
+		log("TP:\t\t\t\t" + dosTPs.size());
+		log("TN:\t\t\t\t" + dosTNs.size());
+		log("FP:\t\t\t\t" + dosFPs.size());
+		log("FN:\t\t\t\t" + dosFNs.size());
+		
+		log("------------------------------------------------ Categorical Accuracy --------------------------------------------");
+		log("------------------------- DOS Accuracy ------------------------");
+		log("TPR:\t\t\t\t" + ((double)dosTPs.size() / (double)(dosTPs.size() + dosFNs.size())));
+		log("TNR:\t\t\t\t" + ((double)dosTNs.size() / (double)(dosTNs.size() + dosFPs.size())));
+		log("PPV:\t\t\t\t" + ((double)dosTPs.size() / (double)(dosTPs.size() + dosFPs.size())));
+		log("NPV:\t\t\t\t" + ((double)dosTNs.size() / (double)(dosTNs.size() + dosFNs.size())));
+		log("FPR:\t\t\t\t" + ((double)dosFPs.size() / (double)(dosFPs.size() + dosTNs.size())));
+		log("FNR:\t\t\t\t" + ((double)dosFNs.size() / (double)(dosFNs.size() + dosTPs.size())));
+		log("FDR:\t\t\t\t" + ((double)dosFPs.size() / (double)(dosFPs.size() + dosTPs.size())));
+		log("ACC:\t\t\t\t" + ((double)(dosTPs.size() + dosTNs.size()) / (double)(dosTPs.size() + dosTNs.size() + dosFPs.size() + dosFNs.size())));
+		log("F1:\t\t\t\t" + ((double)(2 * dosTPs.size()) / (double)(2 * dosTPs.size() + dosFPs.size() + dosFNs.size())));
+		
+		
+		log("------------------------- R2L Accuracy ------------------------");
+		log("TPR:\t\t\t\t" + ((double)r2lTPs.size() / (double)(r2lTPs.size() + r2lFNs.size())));
+		log("TNR:\t\t\t\t" + ((double)r2lTNs.size() / (double)(r2lTNs.size() + r2lFPs.size())));
+		log("PPV:\t\t\t\t" + ((double)r2lTPs.size() / (double)(r2lTPs.size() + r2lFPs.size())));
+		log("NPV:\t\t\t\t" + ((double)r2lTNs.size() / (double)(r2lTNs.size() + r2lFNs.size())));
+		log("FPR:\t\t\t\t" + ((double)r2lFPs.size() / (double)(r2lFPs.size() + r2lTNs.size())));
+		log("FNR:\t\t\t\t" + ((double)r2lFNs.size() / (double)(r2lFNs.size() + r2lTPs.size())));
+		log("FDR:\t\t\t\t" + ((double)r2lFPs.size() / (double)(r2lFPs.size() + r2lTPs.size())));
+		log("ACC:\t\t\t\t" + ((double)(r2lTPs.size() + r2lTNs.size()) / (double)(r2lTPs.size() + r2lTNs.size() + r2lFPs.size() + r2lFNs.size())));
+		log("F1:\t\t\t\t" + ((double)(2 * r2lTPs.size()) / (double)(2 * r2lTPs.size() + r2lFPs.size() + r2lFNs.size())));
+		
+		
+		log("------------------------- U2R Accuracy ------------------------");
+		log("TPR:\t\t\t\t" + ((double)u2rTPs.size() / (double)(u2rTPs.size() + u2rFNs.size())));
+		log("TNR:\t\t\t\t" + ((double)u2rTNs.size() / (double)(u2rTNs.size() + u2rFPs.size())));
+		log("PPV:\t\t\t\t" + ((double)u2rTPs.size() / (double)(u2rTPs.size() + u2rFPs.size())));
+		log("NPV:\t\t\t\t" + ((double)u2rTNs.size() / (double)(u2rTNs.size() + u2rFNs.size())));
+		log("FPR:\t\t\t\t" + ((double)u2rFPs.size() / (double)(u2rFPs.size() + u2rTNs.size())));
+		log("FNR:\t\t\t\t" + ((double)u2rFNs.size() / (double)(u2rFNs.size() + u2rTPs.size())));
+		log("FDR:\t\t\t\t" + ((double)u2rFPs.size() / (double)(u2rFPs.size() + u2rTPs.size())));
+		log("ACC:\t\t\t\t" + ((double)(u2rTPs.size() + u2rTNs.size()) / (double)(u2rTPs.size() + u2rTNs.size() + u2rFPs.size() + u2rFNs.size())));
+		log("F1:\t\t\t\t" + ((double)(2 * u2rTPs.size()) / (double)(2 * u2rTPs.size() + u2rFPs.size() + u2rFNs.size())));
+		
+		
+		log("------------------------- Probing Accuracy ------------------------");
+		log("TPR:\t\t\t\t" + ((double)probingTPs.size() / (double)(probingTPs.size() + probingFNs.size())));
+		log("TNR:\t\t\t\t" + ((double)probingTNs.size() / (double)(probingTNs.size() + probingFPs.size())));
+		log("PPV:\t\t\t\t" + ((double)probingTPs.size() / (double)(probingTPs.size() + probingFPs.size())));
+		log("NPV:\t\t\t\t" + ((double)probingTNs.size() / (double)(probingTNs.size() + probingFNs.size())));
+		log("FPR:\t\t\t\t" + ((double)probingFPs.size() / (double)(probingFPs.size() + probingTNs.size())));
+		log("FNR:\t\t\t\t" + ((double)probingFNs.size() / (double)(probingFNs.size() + probingTPs.size())));
+		log("FDR:\t\t\t\t" + ((double)probingFPs.size() / (double)(probingFPs.size() + probingTPs.size())));
+		log("ACC:\t\t\t\t" + ((double)(probingTPs.size() + probingTNs.size()) / (double)(probingTPs.size() + probingTNs.size() + probingFPs.size() + probingFNs.size())));
+		log("F1:\t\t\t\t" + ((double)(2 * probingTPs.size()) / (double)(2 * probingTPs.size() + probingFPs.size() + probingFNs.size())));
 		
 	}
 	
